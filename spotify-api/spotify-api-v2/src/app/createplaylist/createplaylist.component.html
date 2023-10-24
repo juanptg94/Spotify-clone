@@ -1,0 +1,17 @@
+<div class="createPlaylist">
+    <h2>Playlist Creation</h2>
+    <div class="name-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    
+    <br>
+
+    <div class="desc-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+      </div>
+    <br>
+
+    <button type="submit" (click)="createPlaylist()" class="submit-button">Submit</button>
+</div>

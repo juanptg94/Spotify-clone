@@ -1,0 +1,167 @@
+<div class="search-container">
+  <div class="main-results-div">
+    <div class="main-results">
+      <h3>Resultado principal</h3>
+      <mat-card class="search-card" *ngFor="let main of mainArtist" (click)="navigateToArtist()">
+        <div class="img-container">
+          <img mat-card-sm-image class="search-img"
+            src="{{main.images}}">
+
+        </div>
+        <mat-card-header class="search-header" >
+
+
+          <mat-card-title class="search-title">{{main.artistName}}</mat-card-title>
+
+          <div class="label-title-div">
+            Artista
+
+          </div>
+
+
+
+
+
+
+        </mat-card-header>
+        <button mat-fab color="">
+          <span class="bi bi-play-fill" (click)="playArtistSongs($event)"></span>
+        </button>
+      </mat-card>
+    </div>
+    <div class="search-main-song">
+      <h3>Canciones</h3>
+      <div class="search-song-card" *ngFor="let displaysong of displaySongs; let i = index" (click)="getSong(displaysong)">
+        <img mat-card-sm-image
+          src="{{displaysong.images}}">
+
+        <div class="search-song-detail">
+
+
+
+          <p class="search-song-title">{{displaysong.trackname}}</p>
+
+
+          <p class="search-song-subtitle">{{displaysong.artistName}}</p>
+
+
+
+
+
+        </div>
+        
+        <span 
+        [ngClass]="{'bi bi-balloon-heart-fill': likedSongs[i], 'bi bi-balloon-heart': !likedSongs[i]}"
+        (click)="likeSong(displaysong.trackid,$event)"></span>
+        <p class="search-song-duration">{{displaysong.duration}}</p>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="song-section">
+    <h2 *ngIf="songList && songList>0">Canciones que se relacionan con {{searchTerm}}</h2>
+
+    <div class="songs-div" >
+      <mat-card class="card-song" *ngFor="let song of songList" (click)="getSong(song)">
+        <img mat-card-sm-image src="{{song.images}}">
+        <mat-card-header>
+
+
+          <mat-card-title class="card-song-title" (click)="getAlbum(song.trackname)">{{song.trackname}}</mat-card-title>
+          <!-- Está en discusion los subtitulos no existen en spotify. Sólo son temporales -->
+          <div class="title-div">
+           
+            <mat-card-subtitle class="card-artist-subtitle" *ngFor="let artist of song.artists" (click)="getArtist(artist.name)"> {{ artist.name }} </mat-card-subtitle>
+          </div>
+
+
+
+
+
+
+        </mat-card-header>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+  <div class="artist-section">
+    <h2 *ngIf="artistList  && artistList.length>0">Artistas que se relacionan con {{searchTerm}}</h2>
+
+    <div class="artists-div" >
+      <mat-card class="card-artist" *ngFor="let artist of artistList" (click)="getArtistSection(artist.artistid)">
+        <img mat-card-sm-image src="{{artist.images}}">
+        <mat-card-header>
+
+
+          <mat-card-title class="card-artist-title" >{{artist.artistName}}</mat-card-title>
+          <!-- Está en discusion los subtitulos no existen en spotify. Sólo son temporales -->
+         
+
+          <mat-card-subtitle class="card-artist-subtitle"> Artista </mat-card-subtitle>
+
+
+
+        </mat-card-header>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+  <div class="album-section">
+    <h2 *ngIf="albumList && albumList.length>0">Albums que se relacionan con {{searchTerm}}</h2>
+
+    <div class="albums-div" >
+      <mat-card class="card-album" *ngFor="let album of albumList" (click)="getAlbumSection(album.albumid)">
+        <img mat-card-sm-image src="{{album.images}}">
+        <mat-card-header>
+
+
+          <mat-card-title class="card-album-title" >{{album.albumname}}</mat-card-title>
+          <!-- Está en discusion los subtitulos no existen en spotify. Sólo son temporales -->
+         
+          <mat-card-subtitle *ngIf="album.release_date" class="album-date-subtitle">{{album.release_date}}    </mat-card-subtitle>
+            •
+          <mat-card-subtitle class="card-album-subtitle"> {{album.album_type}} </mat-card-subtitle>
+
+
+
+        </mat-card-header>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+  <div class="playlist-section">
+    <h2 *ngIf="playlistList  && playlistList.length > 0">Playlists que se relacionan con {{searchTerm}}</h2>
+
+    <div class="playlists-div" >
+      <mat-card class="card-playlist" *ngFor="let playlist of playlistList" (click)="getPlaylistSection(playlist.playlistid)">
+        <img mat-card-sm-image src="{{playlist.images}}">
+        <mat-card-header>
+
+
+          <mat-card-title class="card-playlist-title" >{{playlist.playlistname}}</mat-card-title>
+          <!-- Está en discusion los subtitulos no existen en spotify. Sólo son temporales -->
+         
+         
+          <mat-card-subtitle class="card-playlist-subtitle"> {{playlist.description}} </mat-card-subtitle>
+
+
+
+        </mat-card-header>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+  
+  <app-youtube-player [hidden]="SongID=='nosong'" [SONGID]="SongID" #player></app-youtube-player>
+</div>

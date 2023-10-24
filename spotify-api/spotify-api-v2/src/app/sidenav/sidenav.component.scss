@@ -1,0 +1,373 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.example-sidenav {
+  padding: 5px 5px;
+  display: flex;
+  background-color: #000000 !important ;
+  transition: none !important;
+
+}
+
+.example-container{
+  height: 100% ;
+
+
+}
+
+ 
+
+span{
+  position: relative;
+  margin-right: 25px ;
+  font-size:30px;
+}
+span:hover{
+  color: white;
+}
+
+
+::ng-deep {
+  .mat-drawer{
+    background-color: #131313 !important;
+    width: 420px;
+    
+    
+  }
+  .option-list .mdc-list-item__primary-text{
+    color: #a8a8a8 !important;
+    cursor:pointer;
+    transition: 0.4s linear;
+    
+    
+  }
+  .option-list .mdc-list-item__primary-text:hover{
+    color: #ffffff !important;
+    font-weight: 10px !important;
+  }
+  
+ 
+  
+  .example-sidenav{
+    overflow: hidden;
+  }
+.mat-drawer-container .mat-drawer-inner-container{
+  overflow: hidden;
+  
+}
+.mat-drawer-content{ //color toolbar
+  background-color: #121212 !important;
+  
+}
+mat-list{
+  background-color: #121212 !important;
+  border-radius: 5px;
+}
+.librarydiv{
+
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+}
+.library-card{
+
+  background-color: #121212 !important;
+  height: 500px;
+  margin-top: 5px;
+  
+ 
+}
+.library-card .library-buttons{
+  display: flex;
+  align-items: center;
+}
+.library-card .library-buttons .plus-button{ 
+  background-color: #121212;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: none;
+  margin-right: 15px;
+ 
+}
+.library-card .library-buttons .plus-button span{ 
+
+  font-size: 16px;
+  left: 12px;
+  
+}
+.library-card .library-buttons .arrow-button{ 
+  background-color: #121212;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 5px;
+  margin-right: 10px;
+  box-shadow: none;
+ 
+}
+.library-card .library-buttons .arrow-button span{ 
+ 
+  
+  font-size: 16px;
+  left: 12px;
+}
+
+
+.library-card .library-buttons .plus-button:active{ 
+  background-color: #000000;
+ 
+}
+.library-card .library-buttons .arrow-button:active{ 
+  background-color: #000000;
+ 
+}
+.library-card .library-buttons .plus-button:hover{ 
+  background-color: #191919;
+ 
+}
+.library-card .library-buttons .arrow-button:hover{ 
+  background-color: #191919;
+ 
+}
+.library-card .library-buttons .plus-button .mdc-fab__ripple{ 
+  display: none;
+ 
+}
+.library-card .library-buttons .arrow-button .mdc-fab__ripple{ 
+  display: none;
+ 
+}
+.library-card .tabs{
+  color: #a8a8a8 !important;
+  
+  margin-top: 20px;
+  
+}
+.library-card .tabs span{
+  
+  font-size: 16px;
+  background-color: #232323;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+
+}
+.library-card .tabs .playlist-tab{
+  margin-left: 16px;
+  margin-right: 10px;
+  
+}
+.library-card .tabs .switch-groups{
+  margin-left: 16px;
+  margin-right: 10px;
+  
+}
+
+.library-card .tabs span:hover{
+  
+  
+  background-color: #303030;
+ 
+
+}
+
+
+
+
+
+
+.library-card .search .search-button{ 
+  background-color: #121212;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 16px;
+  margin-right: 10px;
+  margin-top: 15px;
+  box-shadow: none;
+ 
+}
+.library-card .search .search-button span{ 
+ 
+  
+  font-size: 16px;
+  left: 12px;
+  
+}
+.library-card .search{ 
+  
+display: flex;
+flex-direction: row;
+align-items: center;
+  
+}
+.library-card .search input{ 
+  
+    height: 17px;
+    width: 280px;
+  
+    margin-top: 10px;
+  }
+
+.library-card .search .search-button:active{ 
+  background-color: #000000;
+ 
+}
+
+.library-card .search .search-button:hover{ 
+  background-color: #191919;
+ 
+}
+
+.library-card .search .search-button .mdc-fab__ripple{ 
+  display: none;
+ 
+}
+
+
+
+
+ .librarydiv .mdc-list-item{
+  color: #a8a8a8 !important;
+  cursor:pointer;
+  transition: 0.4s linear;
+  
+  
+}
+.librarydiv .mdc-list-item:hover{
+  color: #ffffff !important;
+  font-weight: 10px !important;
+ 
+}
+.library-list .library-items  {
+ 
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #131313;
+  
+}
+.library-list{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 300px;
+  
+}
+.library-list .library-items img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  padding: 0;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.library-list .library-items mat-card-header mat-card-title {
+  display: flex;
+ box-shadow: none;
+ margin-bottom: 3px;
+ color: #ffffff;
+  width: 100%;
+  
+
+}.library-list .library-items mat-card-header  {
+  box-shadow: none;
+  background-color: #131313;
+ 
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow-y: auto;
+ 
+ padding: 0;
+ display: flex;
+ padding: 0px 0px 2px 0px;
+}
+.library-list .library-items  mat-card-header:hover {
+  background-color: #282828 !important;
+}
+
+.library-card {
+  height: 380px !important;
+  
+}
+
+.library-list .library-items mat-card-header mat-card-title mat-card-subtitle{
+
+ color: #a8a8a8;
+
+
+}
+.library-list .library-items  mat-card-header mat-card-title .card-text{
+
+ padding: 0;
+}
+
+
+// .principal {
+//   display: flex;
+//   flex-flow: column;
+
+// } 
+.principal {
+  display: flex;
+
+  
+} 
+.main-content{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+app-artista{
+  width: 100%;
+  flex-grow: 1;
+  background-color: #000000;
+ 
+
+}
+app-album{
+  width: 100%;
+  padding: 8px 0px;
+ 
+
+}
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+app-minisidenav {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  
+}
+
+.main-content {
+  padding: 8px 0px;
+  background-color: #000000;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+mat-drawer-content{
+  overflow: hidden !important;
+}
+}

@@ -1,0 +1,271 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.master_play {
+
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #131313;
+    width: 100vw;
+}
+
+.master_play .wave {
+    width: 30px;
+    height: 30px;
+
+    padding-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+   
+}
+
+.master_play .wave .wave1 {
+    width: 3px;
+    height: 10px;
+    margin-right: 3px;
+    border-radius: 10px 10px 0px 0px;
+    background: #36e2ec;
+    
+}
+
+.master_play .wave .wave1:nth-child(2) {
+
+    height: 13px;
+    animation-delay: .4s;
+}
+
+.master_play .wave .wave1:nth-child(3) {
+
+    height: 8px;
+    animation-delay: .8s;
+
+}
+
+/*Javascript class wave*/
+.master_play .wave  .wave1.active2 {
+
+    animation: wave .5s linear infinite ;
+}
+
+.master_play .wave  .wave1:nth-child(2).active2 {
+
+    animation-delay: .4s;
+}
+
+.master_play .wave .wave1:nth-child(3).active2 {
+
+
+    animation-delay: .8s;
+
+}
+
+@keyframes wave {
+    0% {
+        height: 10px;
+    }
+
+    50% {
+        height: 15px;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+
+
+
+
+/*Estilo de la card */
+.media-card {
+    width: 3x50px;
+
+    border-radius: 50px;
+    
+}
+
+.media-card img {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+    padding: 0;
+}
+
+.media-card mat-card-title {
+    display: flex;
+    align-items: flex-start;
+    font-weight: 10px;
+    color: white;
+    font-size: 18px;
+
+}
+
+.media-card div {
+    display: grid;
+    align-items: flex-start;
+    top: 50px;
+
+
+
+}
+
+.media-card mat-card-title mat-card-subtitle {
+
+    color: #757575;
+
+}
+
+.media-card mat-card-header {
+    background-color: #131313;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 250px;
+
+}
+
+.master_play .icon {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0px 20px 0px 40px;
+    display: flex;
+}
+.master_play .icon .bi{
+    cursor: pointer;
+    outline: none;
+   
+}
+.master_play .icon .bi:nth-child(2){
+    border: 1px solid rgb(105,105,170,.1);
+    border-radius: 50%;
+    padding: 1px 3px 0px 6px;
+    margin: 0px 5px;
+    transition: .3s linear;
+}
+
+.master_play span{
+    color:#fff;
+    width: 32px;
+    font-size: 11px;
+    font-weight: 400;
+}
+.master_play span #currentStart{
+   margin:0px 0px 0px 20px;
+
+}
+.master_play .bar{
+    position: relative;
+    width: 43%;
+    height: 2px;
+    background:rgb(105,105,170,.1);
+    margin: 0px 15px 0px 10px;
+}
+.master_play .bar2{
+    position: absolute;
+    background: #36e2ec;
+    width: 20%;
+    height: 100%;
+    top:0;
+}
+.master_play .dot{
+    position: absolute;
+    background: #36e2ec;
+    width: 5px;
+    height:  5px;
+    top:-1px;
+    left:0%;
+    transition: 0.1s linear;
+    border-radius: 50%;
+     
+}
+.master_play .dot::before{
+    content: '';
+    position: absolute;
+    border: 1px solid #36e2ec;
+    border-radius: 50%;
+    width: 15px;
+    height:  15px;
+    top:-6px;
+    left:-6px;
+    box-shadow: inset 0px 0px 3px #36e2ec;
+     
+}
+.master_play .bar input{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top:-6px;
+   left:0;
+   cursor:pointer;
+   z-index: 99999999;
+   transition: .3s linear;
+   opacity: 0;
+   
+}
+.master_play .vol{
+   position: relative;
+   width: 100px;
+   height: 2px;
+   margin-left: 50px;
+   background:rgb(105, 105, 170,.1);
+   
+      
+ }
+ .master_play .vol .bi{
+    position: absolute;
+    color: #ffffff;
+    font-size: 25px;
+    top:-13px;
+    left: -30px;
+    
+    
+  }
+  .master_play .vol input{
+    position: absolute;
+    width: 100%;
+   
+   top:-2px;
+    left:0;
+    cursor: pointer;
+    z-index: 99999999;
+    transition:  .3s linear;
+    
+    height: 100%;
+    
+      
+ }
+ 
+ .master_play .vol .vol_bar{
+    position: absolute;
+    background: #36e2ec;
+    width: 0%;
+    height: 100%;
+    top:0;
+}
+.master_play .vol .dot{
+    position: absolute;
+    background: #36e2ec;
+    width: 5px;
+    height:  5px;
+    top:-1px;
+    left:0%;
+    transition: 1s linear;
+    border-radius: 50%;
+   
+     
+}
+.master_play .vol .dot::before{
+    content: '';
+    position: absolute;
+    border: 1px solid #36e2ec;
+    border-radius: 50%;
+    width: 15px;
+    height:  15px;
+    top:-6px;
+    left:-6px;
+    box-shadow: inset 0px 0px 3px #36e2ec;
+     
+}
+
+

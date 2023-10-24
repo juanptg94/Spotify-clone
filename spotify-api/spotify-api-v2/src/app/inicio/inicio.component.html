@@ -1,0 +1,71 @@
+<div class="app-inicio">
+  <div class="new-releases-section">
+    <h2>Nuevos Lanzamientos</h2>
+
+    <div class="releases-div">
+
+      <mat-card class="artist-card" *ngFor="let release of releases">
+        <img mat-card-sm-image src="{{release.images[1].url}}">
+        <mat-card-header>
+
+
+          <mat-card-title class="artist-title"
+            (click)="getAlbum(release.albumname)">{{release.albumname}}</mat-card-title>
+          <!-- Está en discusion los subtitulos no existen en spotify. Sólo son temporales -->
+          <div class="title-div">
+            <mat-card-subtitle *ngIf="release.release_date" class="date-subtitle">{{release.release_date}}
+            </mat-card-subtitle>
+            •
+            <mat-card-subtitle class="artist-subtitle" (click)="getArtist(release.artistname)">
+              {{release.artistname}}</mat-card-subtitle>
+          </div>
+
+
+
+
+
+
+        </mat-card-header>
+      </mat-card>
+
+
+
+
+    </div>
+
+  </div>
+  <div class="featured-playlists-section">
+    <h2>Listas de reproducción destacadas</h2>
+
+    <div class="featured-div">
+
+      <mat-card class="playlist-card" *ngFor="let playlist of featuredPlaylists"
+        (click)="getPlaylist(playlist.playlistid)">
+        <img mat-card-sm-image src="{{playlist.images[0].url}}">
+        <mat-card-header>
+
+
+          <mat-card-title class="playlist-title"
+            (click)="getPlaylist(playlist.playlistid)">{{playlist.playlistName}}</mat-card-title>
+          <!-- Está en discusion los subtitulos no existen en spotify. Sólo son temporales -->
+          <div class="title-div">
+
+            <mat-card-subtitle class="playlist-subtitle"> {{playlist.description}}</mat-card-subtitle>
+          </div>
+
+
+
+
+
+
+        </mat-card-header>
+      </mat-card>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,176 @@
+<mat-drawer-container class="example-container" autosize>
+
+
+
+
+
+  <mat-drawer #drawer class="example-sidenav" mode="side" autosize>
+    <mat-list role="list" class="option-list">
+      <mat-list-item role="listitem" (click)="enviarInicio()"><span
+          class="bi bi-house-heart"></span>Inicio</mat-list-item>
+      <mat-list-item role="listitem" (click)="enviarBusqueda()"><span
+          class="bi bi bi-search"></span>Buscar</mat-list-item>
+
+    </mat-list>
+
+    <div class="library-card">
+      <div class="librarydiv">
+        <mat-list-item role="listitem" (click)="toggleDrawer()"><span class="bi bi bi-bookmarks-fill"></span>Tu
+          Biblioteca</mat-list-item>
+
+        <div class="library-buttons">
+
+          <button mat-fab color="" class="plus-button" [disableRipple]="true" (click)="createPlaylist()">
+
+
+
+            <span class="bi bi bi-plus-lg"></span>
+
+
+
+          </button>
+
+
+
+
+        </div>
+
+      </div>
+      <div class="tabs">
+        <span class="switch-groups" *ngIf="followedgroup || userplaylistgroup || useralbumsgroup" (click)="removeGroups()">x</span>
+        <span class="playlist-tab" *ngIf="userplaylists && !useralbumsgroup && !followedgroup" (click)="groupPlaylists()">Playlists</span>
+        <span class="artista-tab" *ngIf="followedartist && !userplaylistgroup && !useralbumsgroup " (click)="groupArtists()">Artistas</span>
+        <span class="album-tab" *ngIf="userlikedalbums && !userplaylistgroup && !followedgroup"(click)="groupAlbums()">Album</span>
+       
+    
+      </div>
+      <div class="search">
+        <button mat-fab color="" class="search-button" [disableRipple]="true" (click)="filterSearchSidenav()">
+          <span class="bi bi-search"></span>
+        </button>
+        <input type="tel" matInput placeholder="Search" #filterSidenav [(ngModel)]="filtervalue">
+      </div>
+      <div class="library-list">
+        <div class="library-items">
+          
+          <div class="unfiltered-group" *ngIf="!filteredflag && !followedgroup && !userplaylistgroup && !useralbumsgroup ">
+            <mat-card-header (click)="enviarLikedSongs()">
+              <mat-card-title>
+                <img mat-card-sm-image
+                  src="https://cdn4.iconfinder.com/data/icons/music-player-46/32/love_heart_happy_favorite_romance-256.png">
+                <div class="card-text">
+                  Canciones que te gustan
+                  <mat-card-subtitle>Lista </mat-card-subtitle>
+                </div>
+              </mat-card-title>
+  
+            </mat-card-header>
+            <mat-card-header *ngFor="let followed of followedartist" (click)="getArtist(followed.artistName)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{followed.artistImages}}">
+                <div class="card-text">
+                  {{followed.artistName}}
+                  <mat-card-subtitle> {{followed.type}}</mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+            <mat-card-header *ngFor="let playlist of userplaylists" (click)="getPlaylist(playlist.playlistid)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{playlist.playlistImages}}">
+                <div class="card-text">
+                  {{playlist.playlistName}}
+                  <mat-card-subtitle> {{playlist.type}} ° {{playlist.username}}</mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+
+            <mat-card-header *ngFor="let album of userlikedalbums" (click)="getAlbum(album.albumID)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{album.albumImages}}">
+                <div class="card-text">
+                  {{album.albumName}}
+                  <mat-card-subtitle> {{album.type}} ° {{album.album_artists}}</mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+          </div>
+
+          <div class="filtered-group" *ngIf="filteredflag">
+            <mat-card-header *ngFor="let filtered of filtereditems" (click)="getFiltered(filtered)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{filtered.Images}}">
+                <div class="card-text">
+                  {{filtered.Name}}
+                  <mat-card-subtitle> {{filtered.type}} </mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+          </div>
+
+          <div class="followed-group" *ngIf="followedgroup">
+            <mat-card-header *ngFor="let followed of followedartist" (click)="getArtist(followed.artistName)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{followed.artistImages}}">
+                <div class="card-text">
+                  {{followed.artistName}}
+                  <mat-card-subtitle> {{followed.type}}</mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+          </div>
+          <div class="userplaylist-group" *ngIf="userplaylistgroup">
+            <mat-card-header *ngFor="let playlist of userplaylists" (click)="getPlaylist(playlist.playlistid)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{playlist.playlistImages}}">
+                <div class="card-text">
+                  {{playlist.playlistName}}
+                  <mat-card-subtitle> {{playlist.type}} ° {{playlist.username}}</mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+          </div>
+          <div class="useralbums-group" *ngIf="useralbumsgroup">
+            <mat-card-header *ngFor="let album of userlikedalbums" (click)="getAlbum(album.albumID)">
+              <mat-card-title>
+                <img mat-card-sm-image src="{{album.albumImages}}">
+                <div class="card-text">
+                  {{album.albumName}}
+                  <mat-card-subtitle> {{album.type}} ° {{album.album_artists}}</mat-card-subtitle>
+                </div>
+              </mat-card-title>
+
+            </mat-card-header>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="drawer-content">
+    <div class="principal">
+
+      <div class="side-nav-container">
+        <app-minisidenav [hidden]="toolbarService.minisidenavhidden"></app-minisidenav>
+      </div>
+      <div class="main-content">
+        <app-toolbar class="toolbar"></app-toolbar>
+        <ng-content></ng-content>
+      </div>
+
+    </div>
+  </mat-drawer-content>
+
+
+</mat-drawer-container>

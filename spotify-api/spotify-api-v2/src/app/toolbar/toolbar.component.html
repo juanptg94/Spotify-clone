@@ -1,0 +1,28 @@
+<mat-toolbar *ngIf="routeIncludesNot('/dashboard/artista')">
+  <div class="searchbar-container">
+     <div class="searchbar-content">
+      <div class="example-full-width" *ngIf="isSearchRoute()">
+        <input type="tel" matInput placeholder="Search" #searchBar [(ngModel)]="searchQuery">
+        <button matSuffix mat-button (click)="handleSearch()"><mat-icon>search</mat-icon></button> 
+      </div>
+    </div>
+    <span class="example-spacer"></span> <!-- spaces image  -->
+    <button mat-icon-button class="accountsettings" [matMenuTriggerFor]="Playlistmenu">
+    
+        <img [src]="userImage" alt="User Image" class="user-image">
+   
+    </button>
+    <mat-menu #Playlistmenu="matMenu">
+
+      <ng-container>
+        <button mat-menu-item (click)="enviarUserProfile()"> User Profile</button>
+        <button mat-menu-item (click)="loggingOut()"> Log Out</button>
+       
+      </ng-container>
+
+
+    </mat-menu>
+  </div>
+
+
+</mat-toolbar>

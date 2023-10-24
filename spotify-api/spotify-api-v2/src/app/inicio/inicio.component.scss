@@ -1,0 +1,179 @@
+.new-releases-section {
+
+    width: auto;
+    margin: 0px 20px;
+
+}
+
+.new-releases-section h2 {
+    color: white;
+}
+
+.app-inicio {
+    width: 100%;
+    background-color: #131313;
+    overflow-y: auto;
+    height: 600px;
+}
+
+.releases-div {
+    width: 1400px;
+    display: flex;
+    overflow-x: auto;
+    
+
+}
+
+.releases-div mat-card mat-card-header {
+
+    
+    margin-top: 15px;
+    justify-content: flex-start;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.releases-div mat-card mat-card-header mat-card-subtitle{
+
+
+    
+    color: white;
+
+}
+
+.releases-div .artist-card {
+
+
+    width: fit-content;
+    margin: 0px 15px;
+    padding: 15px 15px 0px 15px;
+    align-items: flex-start;
+    background-color:#232323;
+    width: 500px;
+}
+.releases-div .artist-card:hover {
+
+
+  
+    background-color:#303030;
+}
+
+
+.releases-div .artist-card img {
+
+
+    width: 186px;
+    height: 186px;
+
+
+}
+.releases-div .artist-card  .artist-subtitle{
+    
+    margin-left: 3px;
+   
+}
+.releases-div .artist-card  .artist-subtitle:hover{
+    text-decoration: underline;
+    
+   
+}
+.releases-div .artist-card  .title-div{
+    display: flex;
+
+   
+}
+.releases-div .artist-card  .date-subtitle{
+    margin-right: 3px;
+
+   
+}
+.releases-div .artist-card  .artist-title:hover{
+    text-decoration: underline;
+    
+   
+}
+.featured-playlists-section {
+
+    width: auto;
+    margin: 0px 20px;
+
+}
+
+.featured-playlists-section h2 {
+    color: white;
+}
+
+.featured-div {
+    width: 1400px;
+    display: flex;
+    overflow-x: auto;
+    
+
+}
+
+.featured-div mat-card mat-card-header {
+
+    
+    margin-top: 15px;
+    justify-content: flex-start;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.featured-div mat-card mat-card-header mat-card-subtitle{
+
+
+    
+    color: white;
+
+}
+
+.featured-div .playlist-card {
+
+
+    width: fit-content;
+    margin: 0px 15px;
+    padding: 15px 15px 0px 15px;
+    align-items: flex-start;
+    background-color:#232323;
+    width: 500px;
+}
+.featured-div .playlist-card:hover {
+
+
+  
+    background-color:#303030;
+}
+
+
+.featured-div .playlist-card img {
+
+
+    width: 186px;
+    height: 186px;
+
+
+}
+.featured-div .playlist-card  .playlist-subtitle{
+    
+    margin-left: 3px;
+   
+}
+
+.featured-div .playlist-card  .title-div{
+    display: flex;
+
+   
+}
+
+.featured-div .playlist-card  .playlist-title:hover{
+    text-decoration: underline;
+    
+   
+}

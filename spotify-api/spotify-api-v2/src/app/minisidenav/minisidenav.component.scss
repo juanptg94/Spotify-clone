@@ -1,0 +1,133 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+ 
+
+  
+  ::ng-deep {
+   
+    
+    .home-search{
+      padding: 8px 8px 4px 8px;
+    }
+    .home-search mat-list mat-list-item  {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .home-search mat-list mat-list-item  .bi{
+      
+      display: flex;
+      justify-content: center;
+      
+    }
+    .miniside{
+     
+      
+      height: 600px;
+      width: 90px;
+      background-color: #000000;
+      
+     
+    }
+    .mini-list{
+     
+      display: flex;
+      flex-direction: column;
+     
+      padding: 0px 0px;
+      
+      height: 370px;
+      overflow-y: auto;
+     
+      
+    }
+    .miniside .mini-card{
+      
+         margin: 8px 8px;
+         background-color: #131313;
+        height: auto;
+        padding: 0px 10px 5px 10px ;
+       
+      
+    }
+    .mini-list .mini-items  {
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      outline: none !important;
+      background-color: #131313;
+      box-shadow: none;
+      border: none;
+   
+      
+    }
+    .mini-list .mini-items img {
+      width: 50px;
+      height: 50px;
+      outline: none !important;
+      box-shadow: none;
+  
+      
+    }
+    .mini-list .mini-items mat-card-header {
+      background-color: #131313;
+      border-radius: 5px;
+      padding:8px 8px ;
+      display: flex;
+      justify-content:  center;
+      border: none;
+      
+    }
+    .mini-list .mini-items mat-card-header mat-card-title {
+     
+      display: flex;
+      align-items: center;
+      
+      
+    }
+    .mini-list .mini-items mat-card-header:hover {
+      background-color:#303030 ;
+      
+    }
+    .miniside .home-search span{
+      color: #ffffff !important;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      white-space: pre-wrap;
+      
+      font-size:30px;
+    }
+    .miniside .home-search span .mat-list-item-content{
+      padding: 0 !important;
+    }
+    .miniside .mini-card .minidiv span{
+      color: #ffffff !important;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      white-space: pre-wrap;
+      margin: 5px 0px;
+      font-size:28px;
+    }
+    .mini-items .tooltip-side{
+      position: absolute;
+      background-color: #282828;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      left: 100px;
+      visibility: hidden;
+
+    }
+    .mini-items:hover .tooltip-side{
+      visibility: visible;
+
+    }
+ 
+   
+}
+  
+   

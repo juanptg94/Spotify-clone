@@ -1,0 +1,169 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.inicio {
+
+   
+    height: 540px;
+   
+ 
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.inicio-header{
+    border-radius: 5px 5px 0px 0px;
+}
+.inicio .inicio-body{
+    height: 800px;
+    background-image: linear-gradient( #34ead2d8 3%, #131313 31% );
+}
+.inicio .buttons button .bi {
+
+    font-size: 30px;
+}
+
+.inicio .mat-mdc-fab {
+    background-color: #1bd463;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.inicio .inicio-card mat-card-header mat-card-title .card-text {
+    font-size: 50px;
+    color: white;
+    font-weight: 50px;
+}
+
+.inicio .inicio-card mat-card-header mat-card-subtitle {
+    margin-bottom: 40px;
+    color: white;
+
+}
+
+
+
+
+
+.inicio .inicio-card {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+
+
+
+}
+
+.inicio .inicio-card mat-card-header {
+    margin-top: 130px;
+    margin-left: 20px;
+
+}
+
+.inicio .inicio-body .song-list {
+    margin: 50px 30px 30px 30px;
+}
+
+.inicio .inicio-body .song-list h2 {
+    color: white;
+    margin: 0;
+}
+
+.inicio .inicio-body .song-list .song-table {
+    background-color: transparent;
+    box-shadow: none;
+    color: #131313;
+}
+
+.inicio .inicio-body .song-list .song-table {
+  
+    width: 100%;
+
+
+}
+
+.inicio .inicio-body .song-list .song-table td {
+    color: #ffffff;
+
+
+}
+
+
+
+.inicio .inicio-body .song-list .song-table .mat-column-num {
+   flex: none;
+   width: 0;
+   white-space: nowrap;
+}
+.inicio .inicio-body .song-list .song-table .mat-column-num {
+    flex: none;
+    width: 0;
+ }
+
+.inicio .inicio-body .song-list .song-table td{
+    padding: 0px 8px;   
+  
+
+}
+.inicio .inicio-body .song-list .song-table th{
+    padding: 0px 8px;
+
+}
+.inicio .inicio-body .song-list .song-table tr{
+   
+ 
+    align-items: center;
+    
+}
+.inicio .inicio-body .song-list .song-table tr:hover{
+    background-color: #282828;
+   
+    
+}
+.inicio .inicio-body .follow-button {
+    color: red;
+    margin-left: 30px;
+    border: 2px solid red;
+    bottom: 5px;
+}
+.inicio .inicio-body .unfollow-button {
+    color:#ffffff ;
+    margin-left: 30px;
+    border: 2px solid #ffffff;
+    bottom: 5px;
+}
+.bi-balloon-heart{
+    color:white;
+    font-size: 20px;
+}
+.bi-balloon-heart-fill{
+    
+    color: red;
+    font-size: 20px;
+}
+.inicio .album-image {
+    width: 250px;
+    height: 250px;
+    margin-left: 30px;
+    align-self: flex-end;
+    margin-bottom: 30px;
+
+
+
+
+}.inicio .inicio-header {
+   
+    width: 100%;
+    height: 370px;
+    background-image: 
+    linear-gradient(#77eb34,#34eb4c,#34ebd2,);
+    
+    display: flex;
+    flex-direction: row;
+   
+
+}
+app-youtube-player{
+    position:absolute;
+    right: 0;
+    bottom:calc(0px + 116px);
+
+}

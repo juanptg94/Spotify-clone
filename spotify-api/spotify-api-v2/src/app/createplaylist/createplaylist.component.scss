@@ -1,0 +1,35 @@
+.createPlaylist{
+    background-color: #131313;
+    padding: 20px 30px 20px  30px;
+    
+}
+.createPlaylist h2{
+   color: white;
+}
+.createPlaylist label{
+    color: white;
+ }
+ .submit-button{
+    margin-top: 15px;
+
+
+ }
+ #id{
+    width: 140px;
+    height: 400px;
+ }
+ .desc-group {
+    display: flex;
+  flex-direction: column;
+
+  }
+  .name-group {
+    display: flex;
+  flex-direction: column;
+
+  }
+  
+  #name{
+    width: 280px;
+    height: 30px;
+ }

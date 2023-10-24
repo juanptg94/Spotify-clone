@@ -1,0 +1,84 @@
+<div class="inicio">
+  <div class="inicio-header">
+    <img src="{{albumImage}}" class="album-image" />
+    <mat-card class="inicio-card">
+      <mat-card-header>
+        <mat-card-title>
+
+          <div class="card-text">
+            <mat-card-subtitle>Lista ° Usuario</mat-card-subtitle>
+            {{albumName}}
+
+          </div>
+        </mat-card-title>
+
+      </mat-card-header>
+    </mat-card>
+
+  </div>
+  <div class="inicio-body">
+    <div class="buttons">
+      <button mat-fab color="">
+        <span class="bi bi-play-fill" (click)="playAlbumSongs($event)"></span>
+      </button>
+      <button mat-button [class.unfollow-button]="!savedAlbum" [class.follow-button]="savedAlbum"
+        (click)="followAlbum($event)">{{savedAlbum?'SIGUIENDO':'SEGUIR'}}</button>
+    </div>
+    <div class="song-list">
+      <h2>Populares</h2>
+
+      <table mat-table [dataSource]="dataSource" class="song-table">
+
+        <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="num">
+          <th mat-header-cell *matHeaderCellDef> # </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+
+        <ng-container matColumnDef="titulo">
+
+          <th mat-header-cell *matHeaderCellDef> Título </th>
+          <td mat-cell *matCellDef="let element" class="song-detail"> {{element.titulo}} </td>
+        </ng-container>
+
+
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="duracion">
+          <th mat-header-cell *matHeaderCellDef> Duración </th>
+          <td mat-cell *matCellDef="let element"> {{element.duracion}}
+
+            <div class="center-content">
+              <span
+                [ngClass]="{'bi bi-balloon-heart-fill': likedSongs[element.position ], 'bi bi-balloon-heart': !likedSongs[element.position  ]}"
+                (click)="likeSong(element.trackid,$event)"></span>
+                <span class="bi bi-three-dots-vertical" (click)="selectToPlaylist(element.trackid,$event)" [matMenuTriggerFor]="Playlistmenu"></span>
+              <mat-menu #Playlistmenu="matMenu">
+
+                <ng-container *ngFor="let option of menuOptions">
+                  <button mat-menu-item (click)="addToPlaylist(option.playlistid,element.trackid)">{{ option.playlistName }}</button>
+                </ng-container>
+                
+                
+              </mat-menu>
+              
+              
+
+            </div>
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getSong(row)"></tr>
+      </table>
+
+    </div>
+  </div>
+  <app-youtube-player [hidden]="SongID=='nosong'" [SONGID]="SongID" #player></app-youtube-player>
+</div>

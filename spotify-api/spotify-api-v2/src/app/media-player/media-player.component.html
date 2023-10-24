@@ -1,0 +1,44 @@
+<div class="master_play">
+  <div class="wave" *ngIf="displayImage">
+    <div class="wave1"></div>
+    <div class="wave1"></div>
+    <div class="wave1"></div>
+  </div>
+
+  <mat-card class="media-card">
+    <mat-card-header>
+      <mat-card-title>
+        <img mat-card-sm-image [src]="displayImage" *ngIf="displayImage">
+        <div class="card-text">
+          {{songName}}
+          <mat-card-subtitle *ngFor="let artist of songArtists">{{artist}}</mat-card-subtitle>
+        </div>
+      </mat-card-title>
+
+    </mat-card-header>
+  </mat-card>
+  <div class="icon">
+    <i class="bi bi-skip-start-fill" (click)="prevButton()"></i>
+    <i class="bi" [ngClass]="isPlaying ? 'bi-pause-fill' : 'bi-play-fill'" (click)="togglePlay()"></i>
+    <i class="bi bi-skip-end-fill"(click)="nextButton()"></i>
+
+  </div>
+  <span id="currentStart"*ngIf="songLength!==''">{{currentTime}}</span>
+
+
+  <div class="bar">
+    <input type="range" min="0" id="" max="{{barLength}}"  [(ngModel)]="barTime" (input)="onBarSliderChange($event)" >
+    <div class="bar2"[style.width.%]="calculateDotPosition()"></div>
+    <div class="dot" [style.left.%]="calculateDotPosition()"></div>
+
+
+  </div>
+
+  <span id="currentEnd" *ngIf="songLength!==''">{{songLength}}</span>
+  <div class="vol">
+    <i class="bi bi-volume-down-fill"></i>
+    <input type="range"  id="vol" min="0" max="100" value="{{currentVolumeValue}}" (input)="onVolumeSliderChange($event)">
+    <div class="bar2"></div>
+    <div class="dot" id="vol_dot"></div>
+  </div>
+</div>

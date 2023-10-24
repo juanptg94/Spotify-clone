@@ -1,0 +1,92 @@
+
+<div class="miniside" [hidden]="toolbarService.minisidenavhidden">
+  <div class="home-search">
+    <mat-list role="list" class="option-list">
+      <mat-list-item role="listitem" (click)="enviarInicio()" ><span class="bi bi-house-heart"></span></mat-list-item>
+      <mat-list-item role="listitem"(click)="enviarBusqueda()"><span class="bi bi bi-search"></span></mat-list-item>
+  
+    </mat-list>
+  
+  </div>
+
+  <div class="mini-card">
+    <div class="minidiv">
+      <mat-list-item role="listitem" (click)="toggleDrawer()"><span
+          class="bi bi bi-bookmarks-fill"></span></mat-list-item>
+
+
+
+    </div>
+
+
+    <div class="mini-list">
+
+
+      <mat-card class="mini-items" (click)="enviarLikedSongs()"  >
+        <mat-card-header>
+          <mat-card-title>
+            <img  mat-card-sm-image src="https://cdn4.iconfinder.com/data/icons/music-player-46/32/love_heart_happy_favorite_romance-256.png">
+            <span class="tooltip-side">Canciones que te gustan<br>
+              Lista
+            </span>
+          </mat-card-title> 
+
+
+        </mat-card-header>
+      
+
+
+
+      </mat-card>
+      
+
+
+
+
+      <mat-card class="mini-items" *ngFor="let followed of followedartist" (click)="getArtist(followed.artistid)">
+        <mat-card-header>
+          <mat-card-title>
+            <img  mat-card-sm-image src="{{followed.artistImages}}">
+            <span class="tooltip-side">{{followed.artistName}}<br>
+              {{followed.type}}
+            </span>
+          </mat-card-title> 
+
+        </mat-card-header>
+      
+
+
+
+      </mat-card>
+      <mat-card class="mini-items" *ngFor="let playlist of userplaylists" (click)="getPlaylist(playlist.playlistid)" >
+        <mat-card-header>
+          <mat-card-title>
+            <img  mat-card-sm-image src="{{playlist.playlistImages}}">
+            <span class="tooltip-side">{{playlist.playlistName}}<br>
+              {{playlist.type}} ° {{playlist.username}}
+            </span>
+          </mat-card-title> 
+
+        </mat-card-header>
+      </mat-card>
+        <mat-card class="mini-items" *ngFor="let album of userlikedalbums" (click)="getAlbum(album.albumID)">
+          <mat-card-header>
+            <mat-card-title>
+              <img  mat-card-sm-image src="{{album.albumImages}}">
+              <span class="tooltip-side">{{album.albumName}}<br>
+                {{album.type}}
+              </span>
+            </mat-card-title> 
+  
+          </mat-card-header>
+      
+        </mat-card>
+
+
+
+    </div>
+
+
+  </div>
+
+</div>

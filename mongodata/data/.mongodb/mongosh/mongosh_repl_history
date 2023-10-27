@@ -1,0 +1,39 @@
+show users
+use TokenDB
+show databases
+show dbs
+exit
+show dbs
+show users
+use TokenDB
+exit
+show users
+use tokendb
+exit
+show users
+use tokendb
+show users
+use TokenDB
+use Token
+exit
+use TokenDb
+exit
+show users
+db.createUser( { user: 'admin', pwd: 'password', roles: [{ role: 'root', db: 'admin' }] } );
+use admin
+exit
+show users
+use TokenDB
+exit
+show users
+show user
+show users
+db.grantRolesToUser("admin",["readWrite"])
+use admin
+mongosh --username Admin --password jpablouan1994 --authenticationDatabase admin
+use admin
+use TokenDB
+mongo -u Admin -p Jpablouan1994p Jpablouan1994994louan1994994994499494min
+use admin
+use TokenDB
+mongo -u Admin -p Jpablouan1994p Jpablouan1994994louan1994994994499494499494

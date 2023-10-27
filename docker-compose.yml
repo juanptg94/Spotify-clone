@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./spotify-api\spotify-api-v2
+    ports:
+      - 3000:3000
+    networks:
+      - spotifyclonenetwork
+   
+  backend:
+    build: ./server
+    ports:
+      - 3001:3001
+    networks:
+      - spotifyclonenetwork
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: TokenDB
+      MONGO_INITDB_ROOT_USERNAME: Admin
+      MONGO_INITDB_ROOT_PASSWORD: jpablouan1994
+    volumes:
+      - ./mongodata/data:/data/db
+    networks:
+      - spotifyclonenetwork
+
+networks:
+  spotifyclonenetwork:
+    driver: bridge
+   

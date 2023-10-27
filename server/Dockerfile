@@ -1,10 +1,11 @@
-FROM node:20-alpine3.18
+FROM  node:18-alpine
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN apk add --update nodejs npm
 
 COPY . ./
 
-EXPOSE 3888
+EXPOSE 3001
+RUN npm install
 
 CMD ["npm", "run", "devStart"]

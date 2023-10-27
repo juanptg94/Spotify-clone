@@ -43,7 +43,7 @@ const publicKey = `MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgHle40wABzHzDRAsnQbwsQHBn
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-mongoose.connect('mongodb://127.0.0.1/accesstokenDB', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => { ('Connected to Mongoose database') });
+mongoose.connect('mongodb://clone:spotify@mongo:27017/TokenDB', {family:4, useNewUrlParser: true, useUnifiedTopology: true }).then(() => { ('Connected to Mongoose database') });
 const db = mongoose.connection;
 const accessTokenSchema = new mongoose.Schema({
   userId: String,
@@ -117,7 +117,7 @@ async function verifyEncriptedJwtToken(req, res, next) {
   }
   const userId = decryptPayload(Encryptedpayload.encryptedUserId);
   
- 
+
 
   const currentTime = Math.floor(Date.now() / 1000); 
 
